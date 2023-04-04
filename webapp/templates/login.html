@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login - Diabetes Prediction App</title>
+    <link rel="stylesheet" href="static/style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/test">Test</a></li>
+        </ul>
+    </nav>
+
+    <br>
+
+    <div class="form-container">
+        <header>
+            <h1>Login</h1>
+        </header>
+        <main>
+            <form method="POST" action="{{ url_for('login') }}">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br>
+
+                <input type="submit" value="Login">
+            </form>
+            <p>Don't have an account? <a href="/register">Register</a></p>
+        </main>
+    </div>
+
+    <br>
+
+    <footer>
+        <p>&copy;Swasth</p>
+    </footer>
+</body>
+
+</html>

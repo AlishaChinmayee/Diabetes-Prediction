@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Diabetes Prediction</title>
+    <link rel="stylesheet" href="static/style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/test">Test</a></li>
+            <!-- <li><a href="/predict">Predict</a></li> -->
+        </ul>
+    </nav>
+
+    <br>
+
+    <div class="form-container">
+        <h1>Diabetes Prediction</h1>
+        <form action="{{ url_for('predict') }}" method="post">
+            <table>
+                <tr>
+                    <td><label>Pregnancies:</label></td>
+                    <td><input type="text" name="pregnancies"></td>
+                </tr>
+                <tr>
+                    <td><label>Glucose:</label></td>
+                    <td><input type="text" name="glucose"></td>
+                </tr>
+                <tr>
+                    <td><label>Blood Pressure:</label></td>
+                    <td><input type="text" name="blood_pressure"></td>
+                </tr>
+                <tr>
+                    <td><label>Skin Thickness:</label></td>
+                    <td><input type="text" name="skin_thickness"></td>
+                </tr>
+                <tr>
+                    <td><label>Insulin:</label></td>
+                    <td><input type="text" name="insulin"></td>
+                </tr>
+                <tr>
+                    <td><label>BMI:</label></td>
+                    <td><input type="text" name="bmi"></td>
+                </tr>
+                <tr>
+                    <td><label>Diabetes Pedigree Function:</label></td>
+                    <td><input type="text" name="dpf"></td>
+                </tr>
+                <tr>
+                    <td><label>Age:</label></td>
+                    <td><input type="text" name="age"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="Predict"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <h1>Prediction Result: </h1>
+    {% if prediction_text %}
+    <h3 style="text-align:center">
+        <b>{{ prediction_text }}</b></h3>
+    {% endif %}
+</body>
+
+<br>
+
+<footer>
+    <p>&copy; Swasth</p>
+</footer>
+
+</html>
