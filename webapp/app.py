@@ -18,7 +18,7 @@ app.config['MYSQL_PORT'] = 3306
 mysql = MySQL(app)
 
 # Load the saved diabetes prediction model
-with open("C://Users//Abrar Shariff//alisha//diabetes_model.pkl", 'rb') as f:
+with open("Dataset pathway for - Pima Indians Diabetes Database on Kaggle", 'rb') as f:
     model = pickle.load(f)
 
 @app.route('/')
